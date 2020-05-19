@@ -12,7 +12,7 @@ describe('linkDancer', function() {
     expect(linkDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
+  it('should have a step function that makes its node toggle', function() {
     sinon.spy(linkDancer.$node, 'fadeToggle');
     linkDancer.step();
     expect(linkDancer.$node.fadeToggle.called).to.be.true;
