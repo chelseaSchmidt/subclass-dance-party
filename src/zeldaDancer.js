@@ -29,5 +29,8 @@ ZeldaDancer.prototype.step = function() {
     'animation-fill-mode': 'forwards',
     'animation-iteration-count': 'infinite'
   };
+
+  this.animationDuration = shimmyStyle['animation-duration'];
+
   this.$node.css(shimmyStyle);
 };

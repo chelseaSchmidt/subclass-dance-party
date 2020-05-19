@@ -12,10 +12,18 @@ describe('zeldaDancer', function() {
     expect(zeldaDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node toggle', function() {
-    sinon.spy(zeldaDancer.$node, 'fadeToggle');
+  it('should have a step function that applies a CSS style', function() {
+    sinon.spy(zeldaDancer.$node, 'css');
     zeldaDancer.step();
-    expect(zeldaDancer.$node.fadeToggle.called).to.be.true;
+    expect(zeldaDancer.$node.css.called).to.be.true;
+  });
+
+  it('should have a CSS style that applies the proper animation', function() {
+    expect(zeldaDancer.$node.attr('style').indexOf('animation-name: shimmy')).to.not.equal(-1);
+  });
+
+  it('should have an animation rule that is in time with its step', function() {
+    expect(zeldaDancer.timeBetweenSteps / 1000 + 's').to.equal(zeldaDancer.animationDuration);
   });
 
   describe('dance', function() {

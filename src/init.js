@@ -23,13 +23,13 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $(".container").height() * Math.random(),
-      $(".container").width() * Math.random(),
+      $('.container').height() * Math.random(),
+      $('.container').width() * Math.random(),
       Math.random() * 1000
     );
     $('.container').append(dancer.$node);
     window.dancers.push(dancer);
-    console.log(window.dancers);
+    // console.log(window.dancers);
   });
 
   $('.lineUpButton').on('click', function(event) {
@@ -61,9 +61,29 @@ $(document).ready(function() {
 
   //Interaction function #2:
   //=========================
-  //set up object where key is node, value is csquared property
+  //set up object where key is node, value is csquared property like this: {$node: csquared value, $node: csquared value}
   //For each node in the object...
     //
+
+  //Interaction function #3
+  //=========================
+  //for each dancer in the array...
+  $('.danceTogether').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i++) {
+      for (var j = i + 1; j < window.dancers.length; j++) {
+        var innerDancer = window.dancers[i].csquared;
+        var outerDancer = window.dancers[j].csquared;
+        if (innerDancer - outerDancer < 50) {
+          console.log('test');
+          //inner dancer execute this function
+          //outer dancer execute this function
+        }
+      }
+    }
+  });
+    //for each subsequent dancer in the array...
+      //if current dancer csquared property compared with subsequent dancer's csquared are within range of 50px
+        //execute a function
 
 
   //call interaction function on a schedule

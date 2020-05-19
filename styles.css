@@ -38,10 +38,11 @@ body, a:link, a:visited, a:active{
   position:absolute;
   width: 70px;
   height: 70px;
-  /* animation-name:spin;
-  animation-duration: 4s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite; */
+}
+
+.zeldaDancer:hover {
+  width: 140px;
+  height: 140px;
 }
 
 @keyframes spin {

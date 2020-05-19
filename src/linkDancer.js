@@ -45,6 +45,7 @@ LinkDancer.prototype.step = function() {
     'animation-fill-mode': 'forwards',
     'animation-iteration-count': 'infinite'
   };
+  this.animationDuration = spinStyle['animation-duration'];
 
   this.$node.css(spinStyle);
 };

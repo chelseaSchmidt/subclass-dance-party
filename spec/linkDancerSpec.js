@@ -12,10 +12,17 @@ describe('linkDancer', function() {
     expect(linkDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node toggle', function() {
-    sinon.spy(linkDancer.$node, 'fadeToggle');
+  it('should have a step function that applies a CSS style', function() {
+    sinon.spy(linkDancer.$node, 'css');
     linkDancer.step();
-    expect(linkDancer.$node.fadeToggle.called).to.be.true;
+    expect(linkDancer.$node.css.called).to.be.true;
+  });
+
+  it('should have a CSS style that applies the proper animation', function() {
+    expect(linkDancer.$node.attr('style').indexOf('animation-name: spin')).to.not.equal(-1);
+  });
+  it('should have an animation rule that is in time with its step', function() {
+    expect(linkDancer.timeBetweenSteps / 1000 + 's').to.equal(linkDancer.animationDuration);
   });
 
   describe('dance', function() {
