@@ -38,21 +38,33 @@ body, a:link, a:visited, a:active{
   position:absolute;
   width: 70px;
   height: 70px;
-  animation-name:spin;
+  /* animation-name:spin;
   animation-duration: 4s;
   animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-
+  animation-iteration-count: infinite; */
 }
-@keyframes spin{
+
+@keyframes spin {
   0%{
     transform:rotate(5deg);
   }
-  50%{
+  /* 50%{
     transform:rotate(100deg);
-  }
+  } */
   100%{
     transform:rotate(360deg);
+  }
+}
+
+@keyframes shimmy {
+  0%{
+    transform:rotate(0deg);
+  }
+  50%{
+    transform:rotate(10deg);
+  }
+  100%{
+    transform:rotate(-15deg);
   }
 }
 

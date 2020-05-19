@@ -37,5 +37,13 @@ LinkDancer.prototype.step = function() {
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
   // console.log(this.$node);
-  this.$node.fadeToggle(); //spin!
+  // this.$node.fadeToggle(); //spin!
+
+  let spinStyle = {
+    'animation-name': 'spin',
+    'animation-duration': this.timeBetweenSteps / 1000 + 's',
+    'animation-fill-mode': 'forwards',
+    'animation-iteration-count': 'infinite'
+  }
+  this.$node.css(spinStyle);
 };
