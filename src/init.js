@@ -29,7 +29,7 @@ $(document).ready(function() {
     );
     $('.container').append(dancer.$node);
     window.dancers.push(dancer);
-    // console.log(window.dancers);
+    console.log(dancer.top, dancer.left);
   });
 
   $('.lineUpButton').on('click', function(event) {
@@ -42,14 +42,20 @@ $(document).ready(function() {
   });
 
   $('.danceTogether').on('click', function(event) {
-    for (var i = 0; i < window.dancers.length; i++) {
-      for (var j = i + 1; j < window.dancers.length; j++) {
-        var innerDancer = window.dancers[i].csquared;
-        var outerDancer = window.dancers[j].csquared;
-        if (innerDancer - outerDancer < 50) {
-          console.log('test');
-          //inner dancer execute this function
-          //outer dancer execute this function
+    var dancerCopy=window.dancers.slice()
+
+    if (dancerCopy.length > 1) {
+      for (var i = 0; i < dancerCopy.length; i++) {
+        for (var j = i + 1; j < dancerCopy.length; j++) {
+          var innerDancer = dancerCopy[i];
+          var outerDancer = dancerCopy[j];
+          if (Math.abs(innerDancer.top - outerDancer.top) < 100 && Math.abs(innerDancer.left - outerDancer.left) < 100) {
+            console.log('coordinates top: ',innerDancer.top, outerDancer.top, 'coordinates left: ', innerDancer.left, outerDancer.left);
+            //inner dancer execute this function
+            innerDancer.lightUp();
+            //outer dancer execute this function
+            outerDancer.lightUp();
+          }
         }
       }
     }
