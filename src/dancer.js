@@ -38,3 +38,14 @@ MakeDancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+MakeDancer.prototype.lineUp = function() {
+  //set up CSS object with position left
+  console.log('activated');
+  var lineUpLeft = {
+    left: '0'
+  };
+  //apply to node calling this method
+  this.$node.css(lineUpLeft);
+
+};

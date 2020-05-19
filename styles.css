@@ -20,6 +20,14 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
+
+.linkDancer, .zeldaDancer {
+  display: block;
+  position:absolute;
+  width: 70px;
+  height: 70px;
+}
+
 .dancer{
   border:10px solid red;
   border-radius:10px;
