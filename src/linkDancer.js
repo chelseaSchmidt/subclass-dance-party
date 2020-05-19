@@ -44,6 +44,7 @@ LinkDancer.prototype.step = function() {
     'animation-duration': this.timeBetweenSteps / 1000 + 's',
     'animation-fill-mode': 'forwards',
     'animation-iteration-count': 'infinite'
-  }
+  };
+
   this.$node.css(spinStyle);
 };
