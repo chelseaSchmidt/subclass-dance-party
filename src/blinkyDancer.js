@@ -6,12 +6,14 @@ var MakeBlinkyDancer = function(top, left, timeBetweenSteps) {
   // so we must keep a copy of the old version of this function
 
   this.oldStep = MakeDancer.prototype.step;
+  console.log(this.oldStep);
   // MakeDancer.prototype.step();
   this.step();
 
 };
 MakeBlinkyDancer.prototype=Object.create(MakeDancer.prototype);
 MakeBlinkyDancer.prototype.constructor=MakeBlinkyDancer;
+
 
 MakeBlinkyDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
