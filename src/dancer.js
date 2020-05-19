@@ -17,7 +17,7 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
   // this one sets the position to some random default point within the body
 
 
-  //this.setPosition(top, left);
+  this.setPosition(top, left);
 
 
 };
