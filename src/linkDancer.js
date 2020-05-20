@@ -1,7 +1,7 @@
 var LinkDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('linkDancer');
-  this.$node.html('<div class="linkDancer"><img class="linkDancer" src="/images/spinningLink.jpg" alt="Link"></div>').removeClass('dancer');
+  this.$node.html('<div class="linkDancer"><img class="linkDancer" src="images/spinningLink.jpg" alt="Link"></div>').removeClass('dancer');
 };
 
 LinkDancer.prototype = Object.create(MakeDancer.prototype);
