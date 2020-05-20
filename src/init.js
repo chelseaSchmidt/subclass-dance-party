@@ -30,6 +30,20 @@ $(document).ready(function() {
     $('.container').append(dancer.$node);
     window.dancers.push(dancer);
     console.log(dancer.top, dancer.left);
+
+    $('.zeldaDancer').hover(function(){
+      let superSize={
+        width: '170px',
+        height: '170px'
+      };
+      $(this).css(superSize);
+    },function(){
+      let regularSize={
+        width: '70px',
+        height: '70px'
+      };
+      $(this).css(regularSize);
+    });
   });
 
   $('.lineUpButton').on('click', function(event) {
@@ -62,6 +76,8 @@ $(document).ready(function() {
   });
 
 });
+
+
 
 
 
