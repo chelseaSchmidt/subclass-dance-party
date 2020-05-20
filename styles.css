@@ -50,11 +50,6 @@ body, a:link, a:visited, a:active{
   padding-top: 15px;
 }
 
-/* .zeldaDancer:hover {
-  width: 140px;
-  height: 140px;
-} */
-
 @keyframes spin {
   0%{
     transform:rotate(5deg);

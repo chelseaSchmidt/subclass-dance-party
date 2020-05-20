@@ -21,7 +21,6 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-
     var dancer = new dancerMakerFunction(
       $('.container').height() * Math.random(),
       $('.container').width() * Math.random(),
@@ -47,9 +46,6 @@ $(document).ready(function() {
   });
 
   $('.lineUpButton').on('click', function(event) {
-    //for loop
-      //for each element in the array call the linup function
-
       for (var i = 0; i < window.dancers.length; i++) {
         window.dancers[i].lineUp();
       }
@@ -65,9 +61,7 @@ $(document).ready(function() {
           var outerDancer = dancerCopy[j];
           if (Math.abs(innerDancer.top - outerDancer.top) < 100 && Math.abs(innerDancer.left - outerDancer.left) < 100) {
             console.log('coordinates top: ',innerDancer.top, outerDancer.top, 'coordinates left: ', innerDancer.left, outerDancer.left);
-            //inner dancer execute this function
             innerDancer.lightUp();
-            //outer dancer execute this function
             outerDancer.lightUp();
           }
         }
